@@ -10,7 +10,9 @@ namespace ConsoleApp3
             FileUtil fileUtil = new FileUtil();
             //fileUtil.fileGetContents();
             //fileUtil.UserInfo();
-            fileUtil.getProductInfo();
+            //fileUtil.getProductInfo();
+            CollectionSample cs = new CollectionSample();
+            cs.collectionSample();
         }
     }
 }
