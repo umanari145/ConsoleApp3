@@ -200,7 +200,11 @@ namespace ConsoleApp3.Util
                     Console.WriteLine($"id:{record2.Id} Name {record2.Name} Category {record2.Category} Price {record2.Price} Stock {record2.Stock}  ");
                 }
             }
-             
+            
+            
+            int allTotalPrice = records.Sum(e => e.Price * e.Stock);
+            Console.WriteLine($"全商品の合計金額: {allTotalPrice}");
+
             records.GroupBy(e => e.Category).ToList().ForEach(g =>
             {
                 int totalPrice = g.Sum(e => e.Price * e.Stock);
