@@ -210,6 +210,45 @@ namespace ConsoleApp3.Util
                 int totalPrice = g.Sum(e => e.Price * e.Stock);
                 Console.WriteLine($"カテゴリ: {g.Key}, 合計金額: {totalPrice}");
             });
+
+            //商品の追加
+            records.Where(e => e.Id == 5).ToList().ForEach(e =>
+            {
+                e.Stock +=1;
+                Console.WriteLine($"商品の追加後の在庫数: {e.Id} 名前 {e.Name} 在庫数 {e.Stock}");
+            });
+
+
+            try
+            {
+                var singleRecord = records.First(e => e.Id == 7);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("存在しない商品です。");
+            }
+
+
+            //商品の追加
+            try
+            {
+
+                //商品の削除
+                records.Where(e => e.Id == 3).ToList().ForEach(e =>
+                {
+                    if (e.Stock <= 0)
+                    {
+                        throw new InsufficientStockException("在庫が不足しています");
+                    }
+                    e.Stock -= 1;
+                    Console.WriteLine($"商品の削除後の在庫数: {e.Id} 名前 {e.Name} 在庫数 {e.Stock}");
+                });
+            }
+            catch (InsufficientStockException ex)
+            {
+                Console.WriteLine("在庫が不足しています。");
+            }
+
         }
     }
 }
