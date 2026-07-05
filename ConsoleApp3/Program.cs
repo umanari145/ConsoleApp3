@@ -9,7 +9,8 @@ namespace ConsoleApp3
         {
             FileUtil fileUtil = new FileUtil();
             //fileUtil.fileGetContents();
-            fileUtil.UserInfo();
+            //fileUtil.UserInfo();
+            fileUtil.getProductInfo();
         }
     }
 }

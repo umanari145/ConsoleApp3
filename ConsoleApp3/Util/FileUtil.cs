@@ -85,7 +85,7 @@ namespace ConsoleApp3.Util
             {
                 { "name", "ichirou" },
                 { "domain", "yahoo.co.jp" },
-                { "age", "30" },
+                { "age", "15" },
                 { "pref", "tokyo" },
                 { "math", "55" },
                 { "english", "12" },
@@ -97,7 +97,7 @@ namespace ConsoleApp3.Util
             {
                 { "name", "yuusuke" },
                 { "domain", "hotmail.com" },
-                { "age", "30" },
+                { "age", "23" },
                 { "pref", "chiba" },
                 { "math", "67" },
                 { "english", "75" },
@@ -148,5 +148,64 @@ namespace ConsoleApp3.Util
             }
 
         }
-}
+
+        public void getProductInfo()
+        {
+            var filePath = @"C:\Users\matsumoto\source\repos\ConsoleApp3\product.csv";
+
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine($"エラー: ファイルが見つかりません: {filePath}");
+                return;
+            }
+
+            var records = new List<Product>();
+            int skipCount = 0;
+
+            using var reader = new StreamReader(filePath);
+            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+
+            csv.Read();
+            csv.ReadHeader();
+            int lineLoop = 0;
+            while (csv.Read())
+            {
+                lineLoop++;
+                try
+                {
+                    var record = new Product
+                    {
+                        Id = csv.GetField<int>("Id"),
+                        Name = csv.GetField("Name") ?? "",
+                        Category = csv.GetField("Category") ?? "",
+                        Price = csv.GetField<int>("Price"),
+                        Stock = csv.GetField<int>("Stock"),
+                    };
+                    records.Add(record);
+                    
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine($"スキップ: {lineLoop}行目");
+                }
+            }
+
+            foreach (var record2 in records)
+            {
+                if (record2.Stock <= 0)
+                {
+                    Console.WriteLine($"在庫がない商品: id:{record2.Id} Name {record2.Name} Category {record2.Category} Price {record2.Price} Stock {record2.Stock}  ");
+                } else
+                {
+                    Console.WriteLine($"id:{record2.Id} Name {record2.Name} Category {record2.Category} Price {record2.Price} Stock {record2.Stock}  ");
+                }
+            }
+             
+            records.GroupBy(e => e.Category).ToList().ForEach(g =>
+            {
+                int totalPrice = g.Sum(e => e.Price * e.Stock);
+                Console.WriteLine($"カテゴリ: {g.Key}, 合計金額: {totalPrice}");
+            });
+        }
+    }
 }
