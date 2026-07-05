@@ -8,7 +8,8 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
             FileUtil fileUtil = new FileUtil();
-            fileUtil.fileGetContents();
+            //fileUtil.fileGetContents();
+            fileUtil.UserInfo();
         }
     }
 }

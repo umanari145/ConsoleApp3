@@ -64,5 +64,89 @@ namespace ConsoleApp3.Util
             }
 
         }
-    }
+
+
+        public void UserInfo()
+        {
+            List<Dictionary<string, string>> lc = new List<Dictionary<string, string>>();
+
+            // 一番プレーンな書き方
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("name", "kazuki");
+            dic.Add("domain", "gmail");
+            dic.Add("age", "30");
+            dic.Add("pref", "chiba");
+            dic.Add("math", "67");
+            dic.Add("english", "87");
+            lc.Add(dic);
+
+
+            Dictionary<string, string> dic2 = new Dictionary<string, string>()
+            {
+                { "name", "ichirou" },
+                { "domain", "yahoo.co.jp" },
+                { "age", "30" },
+                { "pref", "tokyo" },
+                { "math", "55" },
+                { "english", "12" },
+            };
+            lc.Add(dic2);
+
+            // 初期化子を使った書き方
+            var dic3 = new Dictionary<string, string>()
+            {
+                { "name", "yuusuke" },
+                { "domain", "hotmail.com" },
+                { "age", "30" },
+                { "pref", "chiba" },
+                { "math", "67" },
+                { "english", "75" },
+            };
+            lc.Add(dic3);
+
+            var dic4 = new Dictionary<string, string>()
+            {
+                { "name", "satoshi" },
+                { "domain", "gmail.com" },
+                { "age", "45" },
+                { "pref", "kanagawa" },
+                { "math", "23" },
+                { "english", "47" },
+            };
+            lc.Add(dic4);
+
+
+            var dic5 = new Dictionary<string, string>()
+            {
+                { "name", "jirou" },
+                { "domain", "hotmail.com" },
+                { "age", "9" },
+                { "pref", "tokyo" },
+                { "math", "45" },
+                { "english", "9" },
+            };
+
+            lc.Add(dic5);
+
+
+            foreach (var d in lc)
+            {
+                Console.WriteLine($"名前: {d["name"]}, ドメイン: {d["domain"]}, 年齢: {d["age"]}, 都道府県: {d["pref"]}, 数学: {d["math"]}, 英語: {d["english"]}");
+            }
+
+
+            var grouping = lc.GroupBy(e => e["pref"]);
+            foreach (var eachDic in grouping.OrderBy(g => int.Parse(g.First()["age"])))
+            {
+                Console.WriteLine($"都道府県: {eachDic.Key}");
+                foreach (var d in eachDic)
+                {
+                    d["email"] = $"{d["name"]}@{d["domain"]}";
+                    Console.WriteLine(d);
+                }
+
+            }
+
+        }
+}
 }
