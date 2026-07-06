@@ -12,7 +12,8 @@ namespace ConsoleApp3
             //fileUtil.UserInfo();
             //fileUtil.getProductInfo();
             CollectionSample cs = new CollectionSample();
-            cs.collectionSample();
+            //cs.collectionSample();
+            cs.dateSample();
         }
     }
 }

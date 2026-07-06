@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Transactions;
 using ConsoleApp3.Entity;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConsoleApp3.Util
 {
@@ -117,5 +119,66 @@ namespace ConsoleApp3.Util
         }
 
 
+        public void dateSample()
+        {
+            //基礎編
+            //問題1：曜日の判定
+            //今日の日付を取得し、それが土曜日か日曜日かを判定して「平日です」または「休日です」と表示するプログラムを書いてください。
+            //問題2：日数の差分
+            //2つの日付（例：2026年1月1日と2026年7月6日）を受け取り、その間の日数を計算して表示してください
+
+            Console.WriteLine("$---------Q1------------------");
+            DateTime dt = DateTime.Now;
+            if (dt.DayOfWeek == DayOfWeek.Sunday)
+            {
+                Console.WriteLine("今日は日曜日です。");
+            }
+            else if (dt.DayOfWeek == DayOfWeek.Saturday)
+            {
+                Console.WriteLine("今日は土曜日です。");
+            }
+            else
+            {
+                Console.WriteLine("今日は平日です。");
+            }
+            Console.WriteLine("$---------Q2------------------");
+            DateTime dt2 = new DateTime(2026, 1, 1);
+            DateTime dt3 = new DateTime(2026, 7, 6);
+            var diff = dt3.Subtract(dt2);
+            Console.WriteLine(diff);
+            Console.WriteLine("$---------Q3------------------");
+            DateTime dt4 =  DateTime.Now;
+
+            // その月末の日時を取得する
+            DateTime today = DateTime.Today;
+            DateTime endOfMonth = new DateTime(today.Year, today.Month, 1)
+                .AddMonths(1)
+                .AddDays(-1);
+            Console.WriteLine($"今月の末日: {endOfMonth:yyyy年M月d日}");
+            // こういう書き方もできる
+            int lastDay = DateTime.DaysInMonth(today.Year, today.Month);
+            //先月の月初と月末を取得する
+            DateTime startOfLastMonth = new DateTime(today.Year, today.Month, 1).AddMonths(-1);
+            DateTime endOfLastMonth = startOfLastMonth.AddMonths(1).AddDays(-1);
+            Console.WriteLine($"先月: {startOfLastMonth:yyyy年M月d日} 〜 {endOfLastMonth:yyyy年M月d日}");
+            //先週の月曜日と日曜日を取得する
+            int diff2 = (7 + (today.DayOfWeek - DayOfWeek.Monday)) % 7;
+            DateTime startOfThisWeek = today.AddDays(-diff2);
+            DateTime startOfLastWeek = startOfThisWeek.AddDays(-7);
+            DateTime endOfLastWeek = startOfLastWeek.AddDays(6);
+            Console.WriteLine($"先週: {startOfLastWeek:yyyy年M月d日} 〜 {endOfLastWeek:yyyy年M月d日}");
+            //任意のフォーマットの出力
+            DateTime dt5 = DateTime.Now;
+            Console.WriteLine(dt5.ToString("yyyy年MM月dd日 HH時mm分ss秒"));
+            Console.WriteLine(dt5.ToString("yyyy/MM/dd HH:mm:ss"));
+            Console.WriteLine(dt5.ToString("yyyy-MM-dd HH:mm:ss"));
+            Console.WriteLine(dt5.ToString("yyyy"));
+            //加算・減算
+            DateTime dt6 = DateTime.Now;
+            Console.WriteLine(dt6.AddMonths(1).ToString("yyyy/MM/dd HH:mm:ss"));
+            DateTime dt7 = DateTime.Now;
+            Console.WriteLine(dt7.AddHours(1).ToString("yyyy/MM/dd HH:mm:ss"));
+            Console.WriteLine(dt7.AddDays(7).ToString("yyyy/MM/dd HH:mm:ss"));
+        }
     }
 }
