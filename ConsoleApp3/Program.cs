@@ -1,6 +1,8 @@
 ﻿
+using System.Runtime.CompilerServices;
 using ConsoleApp3.Entity;
 using ConsoleApp3.Util;
+using Dog = ConsoleApp3.Util.Dog;
 
 namespace ConsoleApp3
 {
@@ -17,7 +19,7 @@ namespace ConsoleApp3
             //cs.dateSample();
 
 
-
+            /*
             Person person = new Person();
             person.Name = "John";
             person.Age = 30;
@@ -42,6 +44,21 @@ namespace ConsoleApp3
             Counter counter2 = new Counter();
             Counter counter3 = new Counter();
             Console.WriteLine($"Counter: {Counter.Count}");
+            */
+
+            Generics<int> intBox = new Generics<int>();
+            intBox.set(42);
+            Console.WriteLine($"Integer value: {intBox.get()}");
+
+
+            Generics<string> stringBox = new Generics<string>();
+            stringBox.set("Hello, Generics!");
+            Console.WriteLine($"String value: {stringBox.get()}");
+
+
+            AnilaShelter<Dog> anilaShelter = new AnilaShelter<Dog>();
+            anilaShelter.AddAnimal(new Dog("ポチ"));
+            anilaShelter.AnnnounceAnimalSound();
         }
     }
 }
