@@ -43,6 +43,16 @@ namespace ConsoleApp3.Util
 
             string result = Regex.Replace(text, pattern, replacement);
             Console.WriteLine(result);
+
+
+            string hrefpattern= "<a href=\"(.*?)\">";
+            string href = "<a href=\"www.yahoo.co.jp\">";
+            string hrefreplacement = "$1";
+
+            string result2 = Regex.Replace(href, hrefpattern, hrefreplacement);
+            Console.WriteLine(result2);
+
+
         }
     }
 }
