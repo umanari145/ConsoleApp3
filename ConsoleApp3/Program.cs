@@ -46,7 +46,7 @@ namespace ConsoleApp3
             Console.WriteLine($"Counter: {Counter.Count}");
             */
 
-            Generics<int> intBox = new Generics<int>();
+            /*Generics<int> intBox = new Generics<int>();
             intBox.set(42);
             Console.WriteLine($"Integer value: {intBox.get()}");
 
@@ -58,7 +58,12 @@ namespace ConsoleApp3
 
             AnilaShelter<Dog> anilaShelter = new AnilaShelter<Dog>();
             anilaShelter.AddAnimal(new Dog("ポチ"));
-            anilaShelter.AnnnounceAnimalSound();
+            anilaShelter.AnnnounceAnimalSound();*/
+
+            RegexSample regexSample = new RegexSample();
+            regexSample.judgemenet();
+            regexSample.filtering();
+            regexSample.replace();
         }
     }
 }
