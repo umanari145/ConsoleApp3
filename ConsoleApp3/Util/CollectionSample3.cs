@@ -49,7 +49,8 @@ namespace ConsoleApp3.Util
             Console.WriteLine("---------------------------------------------------------");
             Console.WriteLine("動物の最大体重/最低体重" + animals.Max(a => a.WeightKg) +"/"+ animals.Min(a=>a.WeightKg));
             Console.WriteLine("---------------------------------------------------------");
-            animals.Where(a=>a.Species == "ライオン").OrderByDescending(a=>a.Age).Take(1).ToList().ForEach(a => { Console.WriteLine($"{a.Name} 年齢 {a.Age}"); });
+            animals.Where(a=>a.Species == "ライオン").OrderByDescending(a=>a.Age).Take(1)
+                .ToList().ForEach(a => { Console.WriteLine($"{a.Name} 年齢 {a.Age}"); });
         }
     }
 }
