@@ -49,11 +49,17 @@ namespace ConsoleApp3.Util
                   .ToList()
                   .ForEach(g => Console.WriteLine($" {g.Category} での合計{g.total}"));
             Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine(orders.OrderByDescending(o => o.OrderedAt)
+                .FirstOrDefault().ToString());
+            Console.WriteLine("---------------------------------------------------------");
             orders.OrderByDescending(o => o.OrderedAt)
-                .FirstOrDefault();
-               
-                
-           
+                .Take(3).ToList().ForEach(o => Console.WriteLine($" {o.CustomerName}  {o.OrderedAt}"));
+            Console.WriteLine("---------------------------------------------------------");
+            orders.GroupBy(o => o.CustomerName)
+                .Select(g => new { CustomerName = g.Key, totalPrice = g.Sum(o => o.Price * o.Quantity)})
+                .ToList()
+                .ForEach (g => Console.WriteLine($"{g.CustomerName} {g.totalPrice}"));
+
         }
     }
 }
