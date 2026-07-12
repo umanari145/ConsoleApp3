@@ -60,10 +60,14 @@ namespace ConsoleApp3
             anilaShelter.AddAnimal(new Dog("ポチ"));
             anilaShelter.AnnnounceAnimalSound();*/
 
-            RegexSample regexSample = new RegexSample();
+            /*RegexSample regexSample = new RegexSample();
             regexSample.judgemenet();
             regexSample.filtering();
-            regexSample.replace();
+            regexSample.replace();*/
+            //CollectionSample2 sample2 = new CollectionSample2();
+            //sample2.printout();
+            CollectionSample3 sample3 = new CollectionSample3();
+            sample3.collectionOutput();
         }
     }
 }
