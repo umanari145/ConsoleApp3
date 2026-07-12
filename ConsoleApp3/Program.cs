@@ -66,8 +66,10 @@ namespace ConsoleApp3
             regexSample.replace();*/
             //CollectionSample2 sample2 = new CollectionSample2();
             //sample2.printout();
-            CollectionSample3 sample3 = new CollectionSample3();
-            sample3.collectionOutput();
+            //CollectionSample3 sample3 = new CollectionSample3();
+            //sample3.collectionOutput();
+            CollectionSample4 sample4 = new CollectionSample4();
+            sample4.output();
         }
     }
 }

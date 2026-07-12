@@ -51,6 +51,9 @@ namespace ConsoleApp3.Util
             Console.WriteLine("---------------------------------------------------------");
             animals.Where(a=>a.Species == "ライオン").OrderByDescending(a=>a.Age).Take(1)
                 .ToList().ForEach(a => { Console.WriteLine($"{a.Name} 年齢 {a.Age}"); });
+            Console.WriteLine("---------------------------------------------------------");
+            animals.GroupBy(a=>a.Species).Select(g=>new {Speceis = g.Key,Count = g.Count()})
+                .ToList().ForEach(g=>Console.WriteLine($" {g.Speceis}の数は{g.Count}"));
         }
     }
 }
