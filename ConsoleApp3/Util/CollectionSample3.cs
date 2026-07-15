@@ -54,6 +54,8 @@ namespace ConsoleApp3.Util
             Console.WriteLine("---------------------------------------------------------");
             animals.GroupBy(a=>a.Species).Select(g=>new {Speceis = g.Key,Count = g.Count()})
                 .ToList().ForEach(g=>Console.WriteLine($" {g.Speceis}の数は{g.Count}"));
+            Console.WriteLine("---------------------------------------------------------");
+            
         }
     }
 }
