@@ -25,7 +25,7 @@ namespace ConsoleApp3.Util
         public void output()
         {
             var numbers = Enumerable.Range(1, 20).ToList();
-            numbers.Where(x => x %2 == 0).ToList().ForEach(x => Console.WriteLine(x));
+            numbers.Where(x => x % 2 == 0).ToList().ForEach(x => Console.WriteLine(x));
             Console.WriteLine("---------------------------------------------------------");
             var items = new List<string> { "りんご", "みかん", "りんご", "バナナ", "みかん", "ぶどう" };
             var uniqueByHashSet = new HashSet<string>(items);
@@ -37,7 +37,7 @@ namespace ConsoleApp3.Util
             foreach (var x in aaa) {
                 if (wordCount.ContainsKey(x)) {
                     wordCount[x]++;
-                } 
+                }
                 else
                 {
                     wordCount[x] = 1;
@@ -49,7 +49,7 @@ namespace ConsoleApp3.Util
             int totalSum = 0;
             foreach (var x in numbers2)
             {
-                totalSum += x; 
+                totalSum += x;
             }
             Console.WriteLine(totalSum);
             Console.WriteLine("---------------------------------------------------------");
@@ -64,7 +64,7 @@ namespace ConsoleApp3.Util
             Console.WriteLine(scores.Min());
             Console.WriteLine("---------------------------------------------------------");
             var scores2 = new List<int> { 65, 90, 72, 88, 59, 100, 45 };
-            scores2.Where(s=> s >=70).ToList().ForEach(s => Console.WriteLine(s));
+            scores2.Where(s => s >= 70).ToList().ForEach(s => Console.WriteLine(s));
             Console.WriteLine("---------------------------------------------------------");
             Dictionary<string, int> members = new Dictionary<string, int>();
             members.Add("太郎", 25);
@@ -76,7 +76,7 @@ namespace ConsoleApp3.Util
             Console.WriteLine("---------------------------------------------------------");
             foreach (var member in members)
             {
-                Console.WriteLine(member.Key +"さんは" + member.Value + "才です。");
+                Console.WriteLine(member.Key + "さんは" + member.Value + "才です。");
             }
             Console.WriteLine("---------------------------------------------------------");
             var foods = new List<string> { "カレー", "寿司", "カレー", "ラーメン", "寿司", "カレー" };
@@ -85,14 +85,14 @@ namespace ConsoleApp3.Util
                 if (favorite.ContainsKey(food))
                 {
                     favorite[food]++;
-                } 
+                }
                 else
                 {
                     favorite[food] = 1;
                 }
             }
             foreach (var food in favorite)
-            { 
+            {
                 Console.WriteLine($"{food.Key} - {food.Value}");
             }
 
@@ -102,6 +102,75 @@ namespace ConsoleApp3.Util
                  { "りんご", 10 },
                  { "みかん", 5 }
             };
+
+            Console.WriteLine("---------------------------------------------------------");
+            int[] numbers3 = { 5, 3, 8, 1, 9 };
+            int? maxVal, minVal;
+            maxVal = null;
+            minVal = null;
+            foreach (var number in numbers3)
+            {
+                if (maxVal == null) {
+                    maxVal = number;
+                }
+                else if (maxVal > number)
+                {
+                    maxVal = number;
+                }
+
+                if (minVal == null)
+                {
+                    minVal = number;
+                }
+                else if (minVal < number)
+                {
+                    minVal = number;
+                }
+
+            }
+            Console.WriteLine($" 最大値{maxVal} 最小値{minVal}");
+            Console.WriteLine("---------------------------------------------------------");
+            int[] numbers4 = { 5, 3, 8, 1, 9 };
+
+            for (int i = 0; i < numbers4.Count(); i++)
+            {
+                numbers4[i] = numbers4[i] * 2;
+            }
+
+            List<string> fruits3 = new List<string>();
+            fruits3.Add("りんご");
+            fruits3.Add("みかん");
+            fruits3.Add("ばなな");
+
+            fruits3.Remove("みかん");
+
+            fruits3.ForEach(a => Console.WriteLine(a));
+            Console.WriteLine("---------------------------------------------------------");
+
+            List<int> number5 = new List<int>();
+            for (int i = 1; i <= 10; i++)
+            {
+                number5.Add(i);
+            }
+
+            List<int> number6 = new List<int>();
+            foreach (var num in number5)
+            {
+                if (num % 2 == 0)
+                {
+                    number6.Add(num);
+                }
+            };
+            Console.WriteLine("---------------------------------------------------------");
+            Dictionary<string, int> memebers = new Dictionary<string, int>();
+            memebers["田中"] = 25;
+            memebers["佐藤"] = 30;
+
+            if (members.ContainsKey("田中")) {
+                memebers["田中"] = 25;
+            }
+
+
         }
     }
 }

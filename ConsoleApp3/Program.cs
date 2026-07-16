@@ -70,8 +70,10 @@ namespace ConsoleApp3
             //sample3.collectionOutput();
             //CollectionSample4 sample4 = new CollectionSample4();
             //sample4.output();
-            CollectionSample5 sample5 = new CollectionSample5();
-            sample5.output();
+            //CollectionSample5 sample5 = new CollectionSample5();
+            //sample5.output();
+            CollectionSample6 sample6 = new CollectionSample6();
+            sample6.output();
         }
     }
 }
