@@ -101,6 +101,34 @@ namespace ConsoleApp3.Util
             new Loan { Id = 6, BookId = 7, BorrowerName = "伊藤", LoanDate = new DateTime(2026, 7, 5), ReturnDate = null },
         };
 
+        public class Student
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public int ClassId { get; set; }
+        }
+
+        public class ClassRoom
+        {
+            public int ClassId { get; set; }
+            public string ClassName { get; set; }
+        }
+
+        List<Student> students = new List<Student>
+        {
+            new Student { Id = 1, Name = "田中", ClassId = 101 },
+            new Student { Id = 2, Name = "鈴木", ClassId = 102 },
+            new Student { Id = 3, Name = "佐藤", ClassId = 101 },
+            new Student { Id = 4, Name = "高橋", ClassId = 103 },
+        };
+
+        List<ClassRoom> classRooms = new List<ClassRoom>
+        {
+            new ClassRoom { ClassId = 101, ClassName = "1組" },
+            new ClassRoom { ClassId = 102, ClassName = "2組" },
+        };
+
+
 
         public void printout() {
             var ps = from b in products
@@ -190,7 +218,15 @@ namespace ConsoleApp3.Util
                 ToList()
                 .ForEach(b => Console.WriteLine($"{b.Title} {b.LoanDate}"));
 
+            Console.WriteLine("---------------------------------------------------------");
 
+            students.Join(classRooms,
+                s => s.ClassId,
+                c => c.ClassId,
+                (s, c) => new {s.Name, c.ClassName}
+                ).ToList().ForEach(s => Console.WriteLine($"{s.Name}  {s.ClassName}"));
+
+            Console.WriteLine("---------------------------------------------------------");
 
 
         }
