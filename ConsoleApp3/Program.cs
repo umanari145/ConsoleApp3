@@ -1,6 +1,7 @@
 ﻿
 using System.Runtime.CompilerServices;
 using ConsoleApp3.Entity;
+using ConsoleApp3.Service;
 using ConsoleApp3.Util;
 using Dog = ConsoleApp3.Util.Dog;
 
@@ -8,9 +9,14 @@ namespace ConsoleApp3
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            FileUtil fileUtil = new FileUtil();
+            Scraper scraper = new Scraper();
+            var words = await scraper.getWord();
+
+
+
+            //FileUtil fileUtil = new FileUtil();
             //fileUtil.fileGetContents();
             //fileUtil.UserInfo();
             //fileUtil.getProductInfo();
@@ -76,8 +82,9 @@ namespace ConsoleApp3
             //sample6.output();
             //CollectionSample7 sample7 = new CollectionSample7();
             //sample7.output();
-            CollectionSample8 sample8 = new CollectionSample8();
-            sample8.outputter();
+            //CollectionSample8 sample8 = new CollectionSample8();
+            //sample8.outputter();
+
         }
     }
 }
