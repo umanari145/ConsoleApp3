@@ -9,13 +9,13 @@ namespace ConsoleApp3
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //Scraper scraper = new Scraper();
             //var words = await scraper.getWord();
             //DBUtil dbutil = new DBUtil();
             //dbutil.ConnectToDatabase();
-
+            //dbutil.Insert()
 
 
             //FileUtil fileUtil = new FileUtil();
@@ -86,8 +86,9 @@ namespace ConsoleApp3
             //sample7.output();
             //CollectionSample8 sample8 = new CollectionSample8();
             //sample8.outputter();
-            CollectionSample9 sample9 = new CollectionSample9();
-            sample9.output();
+            CollectionSample10 sample10 = new CollectionSample10();
+            sample10.output();
+
         }
     }
 }
