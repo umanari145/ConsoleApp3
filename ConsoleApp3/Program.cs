@@ -88,7 +88,7 @@ namespace ConsoleApp3
             //sample8.outputter();
             //CollectionSample10 sample10 = new CollectionSample10();
             //sample10.output();
-            var intBox = new Box<int>(10);
+            /*var intBox = new Box<int>(10);
             Console.WriteLine(intBox.GetValue());
             intBox.SetValue(20);
             Console.WriteLine(intBox.GetValue());
@@ -96,7 +96,10 @@ namespace ConsoleApp3
             var intBox2 = new Box<string>("Hello");
             Console.WriteLine(intBox2.GetValue());
             intBox2.SetValue("Hello2");
-            Console.WriteLine(intBox2.GetValue());
+            Console.WriteLine(intBox2.GetValue());*/
+            Reflection reflection = new Reflection();
+            reflection.reflection();
+
         }
     }
 }
