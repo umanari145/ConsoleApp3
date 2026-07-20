@@ -10,7 +10,7 @@ namespace ConsoleApp3.Entity
         public class Person
         {
             public string Name { get; set; }
-            public int Age { get; set; }
+            public int Age { get; set; } = 25;
 
             public int Add(int a, int b)
             {
@@ -36,6 +36,10 @@ namespace ConsoleApp3.Entity
             Console.WriteLine($"クラス名: {type.Name}");
             Console.WriteLine($"名前空間: {type.Namespace}");
             Console.WriteLine($"アセンブリ: {type.Assembly.GetName().Name}");
+
+            PropertyInfo ageProp = type.GetProperty("Age");
+            object value = ageProp.GetValue(obj);
+            Console.WriteLine($"Age: {value}");
 
             MethodInfo add = type.GetMethod("Add");
             object result = add.Invoke(obj, new object[] { 3, 5 });
