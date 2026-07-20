@@ -45,7 +45,7 @@ namespace ConsoleApp3.Util
             members.Select(m=> m.name +"@"+m.domain).ToList().ForEach(m => Console.WriteLine($"{m}"));
             Console.WriteLine("-------------------------------------------------------------");
             members.Where(m=>m.age >=30).
-                Select(m => m.name + "@" + m.domain).ToList().ForEach(m => Console.WriteLine($"{m}"));
+                Select(m =>m.name + "@" + m.domain).ToList().ForEach(m => Console.WriteLine($"{m}"));
         }
     }
 }
