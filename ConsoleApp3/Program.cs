@@ -103,8 +103,10 @@ namespace ConsoleApp3
             //collectionSample11.output();
             //Book book = new Book("吾輩は猫である", "夏目漱石", 800);
             //book.messsage();
-            enumlesson el = new enumlesson();
-            el.output();
+            //enumlesson el = new enumlesson();
+            //el.output();
+            NullLearnClass nl = new NullLearnClass();
+            nl.output();
         }
     }
 }
