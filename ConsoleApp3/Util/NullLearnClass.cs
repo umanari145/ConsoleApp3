@@ -74,6 +74,20 @@ namespace ConsoleApp3.Util
 
             User? user2 = new User();
             user2?.SayHello();// userの値があるのでメッセージが入る
+
+
+
+            string? nickname = null;
+
+            nickname ??= "ゲスト";
+
+            Console.WriteLine(nickname);//nicknameがnullなのでゲスト
+
+            string? nickname2 = "太郎";
+
+            nickname2 ??= "ゲスト"; // nicknameはnullじゃないので太郎がそのままでてくる
+
+            Console.WriteLine(nickname2);
         }
 
 
