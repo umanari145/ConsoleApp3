@@ -99,8 +99,10 @@ namespace ConsoleApp3
             Console.WriteLine(intBox2.GetValue());*/
             //Reflection reflection = new Reflection();
             //reflection.reflection();
-            CollectionSample11 collectionSample11 = new CollectionSample11();
-            collectionSample11.output();
+            //CollectionSample11 collectionSample11 = new CollectionSample11();
+            //collectionSample11.output();
+            Book book = new Book("吾輩は猫である", "夏目漱石", 800);
+            book.messsage();
         }
     }
 }
