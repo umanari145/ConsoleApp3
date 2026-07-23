@@ -101,8 +101,10 @@ namespace ConsoleApp3
             //reflection.reflection();
             //CollectionSample11 collectionSample11 = new CollectionSample11();
             //collectionSample11.output();
-            Book book = new Book("吾輩は猫である", "夏目漱石", 800);
-            book.messsage();
+            //Book book = new Book("吾輩は猫である", "夏目漱石", 800);
+            //book.messsage();
+            enumlesson el = new enumlesson();
+            el.output();
         }
     }
 }
