@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Transactions;
 using ConsoleApp3.Entity;
@@ -9,9 +10,30 @@ namespace ConsoleApp3.Util
 {
     internal class CollectionSample
     {
+        
+        class Student
+        {
+            public string Name { get; set; }
+            public int Score { get; set; }
+            public string ClassName { get; set; }
+        }
 
         public void collectionSample()
         {
+            var numbers = new List<int> { 5, 12, 8, 130, 44, 3, 21, 7, 99, 1 };
+
+            var words = new List<string> { "apple", "banana", "kiwi", "grape", "fig", "orange" };
+
+            var students = new List<Student>
+            {
+                new Student { Name = "田中", Score = 85, ClassName = "A組" },
+                new Student { Name = "佐藤", Score = 42, ClassName = "B組" },
+                new Student { Name = "鈴木", Score = 78, ClassName = "A組" },
+                new Student { Name = "高橋", Score = 91, ClassName = "B組" },
+                new Student { Name = "渡辺", Score = 55, ClassName = "A組" },
+                new Student { Name = "伊藤", Score = 63, ClassName = "B組" },
+            };
+
             List<Product> products = new List<Product>
             {
                 new Product { Id = 1, Name = "ノートPC",   Category = "電化製品", Price = 89800, Stock = 5  },
@@ -52,7 +74,7 @@ namespace ConsoleApp3.Util
 
 
             //Q1
-            Console.WriteLine($"---------Q1------------------");
+            /*Console.WriteLine($"---------Q1------------------");
             products.Where(e => e.Stock == 0).ToList().ForEach(e =>
             {
                 Console.WriteLine($"在庫がない商品: id:{e.Id} Name {e.Name} Category {e.Category} Price {e.Price} Stock {e.Stock}  ");
@@ -114,8 +136,30 @@ namespace ConsoleApp3.Util
             if (maxproduct != null)
             {
                 Console.WriteLine($"最も高い商品: Id: {maxproduct.Id}, Name: {maxproduct.Name}, Price: {maxproduct.Price}");
-            }
+            }*/
 
+
+            numbers.Where(n => n >= 10).ToList().ForEach(n => Console.WriteLine(n));
+            words.Where(w=>w.Count() >=5).ToList().ForEach(w => Console.WriteLine(w));
+            students.Where(s => s.Score < 60).ToList().ForEach(s => Console.WriteLine(s));
+            numbers.Select(n => n * 2).ToList().ForEach(n => Console.WriteLine(n));
+            var wordint = words.Select(w => w.Count()).ToList();
+            students.Select(s => s.Name).ToList().ForEach(s => Console.WriteLine(s));
+            numbers.OrderByDescending(n => n).ToList().ForEach(n => Console.WriteLine(n));
+            students.OrderByDescending(s=>s.Score).ToList().ForEach(s=> Console.WriteLine(s.Name+ " " +s.Score));
+            students.OrderBy(s => s.ClassName).ThenByDescending(s => s.Score).ToList().ForEach(s => Console.WriteLine(s.ClassName + " " + s.Score));
+
+            Console.WriteLine(numbers.Sum(n => n));
+            Console.WriteLine(numbers.Average(n => n));
+            Console.WriteLine(numbers.Max(n=>n));
+            Console.WriteLine(numbers.Min(n => n));
+            Console.WriteLine(students.Average(s => s.Score));
+            Console.WriteLine(students.Where(s=>s.Score >=80).Count());
+       
+           
+        
+        
+        
         }
 
 
@@ -179,6 +223,8 @@ namespace ConsoleApp3.Util
             DateTime dt7 = DateTime.Now;
             Console.WriteLine(dt7.AddHours(1).ToString("yyyy/MM/dd HH:mm:ss"));
             Console.WriteLine(dt7.AddDays(7).ToString("yyyy/MM/dd HH:mm:ss"));
+
+             
         }
     }
 }

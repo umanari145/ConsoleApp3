@@ -22,8 +22,8 @@ namespace ConsoleApp3
             //fileUtil.fileGetContents();
             //fileUtil.UserInfo();
             //fileUtil.getProductInfo();
-            //CollectionSample cs = new CollectionSample();
-            //cs.collectionSample();
+            CollectionSample cs = new CollectionSample();
+            cs.collectionSample();
             //cs.dateSample();
 
 
@@ -121,17 +121,21 @@ namespace ConsoleApp3
                 vehicle.showInfo();
                 vehicle.Move();
             }*/
-            Guitar guitar = new Guitar("エスポール", 100000, 6);
+            /*Guitar guitar = new Guitar("エスポール", 100000, 6);
             Piano piano = new Piano("クリスタル", 200000);
             List<Instrument> instruments = new List<Instrument> { 
                 guitar,
                 piano
             };
-            foreach (Instrument i in instruments)
+
+            foreach (Instrument item in instruments)
             {
-                i.Play();
-                i.showInfo();
-            }
+                item.Play();
+                item.showInfo();
+                if (item is ITuneable tunable)
+                {
+                }
+            }*/
             
 
         }
