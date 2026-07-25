@@ -105,8 +105,35 @@ namespace ConsoleApp3
             //book.messsage();
             //enumlesson el = new enumlesson();
             //el.output();
-            NullLearnClass nl = new NullLearnClass();
-            nl.output();
+            //NullLearnClass nl = new NullLearnClass();
+            //nl.output();
+            /*Car car = new Car("プリウス", 150, 4);
+  
+            AirPlane airplace = new AirPlane("ボーイング", 900, 15000);
+            List<Vehicle> v = new List<Vehicle>
+            {
+                car,
+                airplace
+            };
+
+            foreach (Vehicle vehicle in  v )
+            {
+                vehicle.showInfo();
+                vehicle.Move();
+            }*/
+            Guitar guitar = new Guitar("エスポール", 100000, 6);
+            Piano piano = new Piano("クリスタル", 200000);
+            List<Instrument> instruments = new List<Instrument> { 
+                guitar,
+                piano
+            };
+            foreach (Instrument i in instruments)
+            {
+                i.Play();
+                i.showInfo();
+            }
+            
+
         }
     }
 }
