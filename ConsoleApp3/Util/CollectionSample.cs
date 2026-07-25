@@ -155,9 +155,21 @@ namespace ConsoleApp3.Util
             Console.WriteLine(numbers.Min(n => n));
             Console.WriteLine(students.Average(s => s.Score));
             Console.WriteLine(students.Where(s=>s.Score >=80).Count());
-       
-           
-        
+
+            var groups = students.GroupBy(s => s.ClassName)
+                .Select(g=>new { 
+                    average = g.Average(g=>g.Score),
+                    students = g,
+                    className = g.Key
+                });
+            foreach(var group  in groups)
+            {
+                 Console.WriteLine(group.average);
+                 foreach(var g in group.students)
+                 {
+                     Console.WriteLine(g.Name);
+                 }
+            }
         
         
         }
