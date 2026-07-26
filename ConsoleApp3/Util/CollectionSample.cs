@@ -170,8 +170,9 @@ namespace ConsoleApp3.Util
                      Console.WriteLine(g.Name);
                  }
             }
-        
-        
+
+            Console.WriteLine(numbers.Any(n => n > 100));
+            
         }
 
 
