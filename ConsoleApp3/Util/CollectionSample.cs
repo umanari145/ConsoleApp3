@@ -74,7 +74,7 @@ namespace ConsoleApp3.Util
 
 
             //Q1
-            /*Console.WriteLine($"---------Q1------------------");
+            Console.WriteLine($"---------Q1------------------");
             products.Where(e => e.Stock == 0).ToList().ForEach(e =>
             {
                 Console.WriteLine($"在庫がない商品: id:{e.Id} Name {e.Name} Category {e.Category} Price {e.Price} Stock {e.Stock}  ");
@@ -136,7 +136,7 @@ namespace ConsoleApp3.Util
             if (maxproduct != null)
             {
                 Console.WriteLine($"最も高い商品: Id: {maxproduct.Id}, Name: {maxproduct.Name}, Price: {maxproduct.Price}");
-            }*/
+            }
 
 
             numbers.Where(n => n >= 10).ToList().ForEach(n => Console.WriteLine(n));
