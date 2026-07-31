@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ConsoleApp3.Util
 {
-    internal class CollectionSample2
+    public class CollectionSample2
     {
         public class Category
         {

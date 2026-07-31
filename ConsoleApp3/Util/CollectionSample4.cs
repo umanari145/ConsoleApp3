@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.Util
 {
-    internal class CollectionSample4
+    public class CollectionSample4
     {
         public class Order
         {

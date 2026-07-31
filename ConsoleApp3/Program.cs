@@ -11,8 +11,9 @@ namespace ConsoleApp3
     {
         static async Task Main(string[] args)
         {
-            //Scraper scraper = new Scraper();
-            //var words = await scraper.getWord();
+
+            Scraper scraper = new Scraper();
+            var words = await scraper.getWord();
             //DBUtil dbutil = new DBUtil();
             //dbutil.ConnectToDatabase();
             //dbutil.Insert()
@@ -136,8 +137,8 @@ namespace ConsoleApp3
                 {
                 }
             }*/
-            CollectionSample12 cs12 = new CollectionSample12();
-            cs12.output();
+            //CollectionSample12 cs12 = new CollectionSample12();
+            //cs12.output();
 
         }
     }

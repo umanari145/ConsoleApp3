@@ -8,7 +8,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConsoleApp3.Util
 {
-    internal class CollectionSample
+    public class CollectionSample
     {
         
         class Student
