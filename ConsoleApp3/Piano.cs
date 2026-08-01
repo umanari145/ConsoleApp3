@@ -5,7 +5,7 @@ using ConsoleApp3.Entity;
 
 namespace ConsoleApp3
 {
-    internal class Piano : Instrument
+    public class Piano : Instrument
     {
         public Piano(string Name, int Price) : base(Name, Price)
         {

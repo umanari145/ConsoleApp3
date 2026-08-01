@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.Util
 {
-    internal class CollectionSample9
+    public class CollectionSample9
     {
 
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.Entity
 {
-    internal interface ITuneable
+    public interface ITuneable
     { 
         protected void ITune();
     }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ConsoleApp3.Util
+namespace ConsoleApp3.Utilss
 {
-    internal class RegexSample
+    public class RegexSample
     {
 
         public void judgemenet()

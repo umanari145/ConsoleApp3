@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.Entity
 {
-    internal abstract class Instrument
+    public abstract class Instrument
     {
         protected string Name { get; set; }
         protected int Price { get; set; }

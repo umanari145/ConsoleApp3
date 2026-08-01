@@ -6,7 +6,7 @@ using ConsoleApp3.Entity;
 
 namespace ConsoleApp3
 {
-    internal class Guitar:Entity.Instrument,ITuneable
+    public class Guitar:Entity.Instrument,ITuneable
     {
         public int StringCount { get; set; }
 

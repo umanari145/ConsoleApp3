@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace ConsoleApp3.Util
 {
-    internal class CollectionSample12
+    public class CollectionSample12
     {
         public class Student
         {

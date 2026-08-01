@@ -1,42 +1,47 @@
-﻿using ConsoleApp3.Util;
+﻿using ConsoleApp3;
+using ConsoleApp3.Entity;
+using ConsoleApp3.Util;
 
 namespace TestProject2
 {
     [TestClass]
-    public sealed class Test1
+    public sealed class Test2
     {
         [TestMethod]
         public void TestMethod1()
         {
-            CollectionSample sample = new CollectionSample();
-            sample.collectionSample();
+            Guitar guitar = new Guitar("Yamaha", 10000, 6);
+            guitar.Play();
+            guitar.ITune();
         }
 
         [TestMethod]
         public void TestMethod2()
         {
-            CollectionSample2 sample2 = new CollectionSample2();
-            sample2.printout();
+            Piano piano = new Piano("Steinway", 50000);
+            piano.Play();
         }
 
         [TestMethod]
         public void TestMethod3()
         {
-            CollectionSample3 sample3 = new CollectionSample3();
-            sample3.collectionOutput();
+            ConsoleApp3.Utilss.RegexSample rs = new ConsoleApp3.Utilss.RegexSample();
+            rs.judgemenet();
+            rs.filtering();
+            rs.replace();
         }
 
         [TestMethod]
         public void TestMethod4()
         {
-            CollectionSample4 sample4 = new CollectionSample4();
+            var sample4 = new CollectionSample4();
             sample4.output();
         }
 
         [TestMethod]
         public void TestMethod5()
         {
-            CollectionSample5 sample5 = new CollectionSample5();
+            var sample5 = new CollectionSample5();
             sample5.output();
         }
 
@@ -44,7 +49,7 @@ namespace TestProject2
         [TestMethod]
         public void TestMethod6()
         {
-            CollectionSample6 sample6 = new CollectionSample6();
+            var sample6 = new CollectionSample6();
             sample6.output();
         }
 
@@ -68,27 +73,6 @@ namespace TestProject2
         {
             CollectionSample9 sample9 = new CollectionSample9();
             sample9.output();
-        }
-
-        [TestMethod]
-        public void TestMethod10()
-        {
-            CollectionSample10 sample10 = new CollectionSample10();
-            sample10.output();
-        }
-
-        [TestMethod]
-        public void TestMethod11()
-        {
-            CollectionSample11 sample11 = new CollectionSample11();
-            sample11.output();
-        }
-
-        [TestMethod]
-        public void TestMethod12()
-        {
-            CollectionSample12 sample12 = new CollectionSample12();
-            sample12.output();
         }
     }
 }
