@@ -5,7 +5,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConsoleApp3.Util
 {
-    internal class NullLearnClass
+    public class NullLearnClass
     {
         //警告発生
         string name = null;

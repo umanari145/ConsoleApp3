@@ -34,15 +34,15 @@ namespace TestProject2
         [TestMethod]
         public void TestMethod4()
         {
-            var sample4 = new CollectionSample4();
-            sample4.output();
+            NullLearnClass nc = new NullLearnClass();
+            nc.output();
+
         }
 
         [TestMethod]
         public void TestMethod5()
         {
-            var sample5 = new CollectionSample5();
-            sample5.output();
+            
         }
 
 
