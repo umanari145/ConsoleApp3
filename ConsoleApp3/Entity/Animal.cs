@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.Entity
 {
-    internal class Animal
+    public class Animal
     {
         public string Name {  get; set; }
 

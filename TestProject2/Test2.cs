@@ -74,5 +74,12 @@ namespace TestProject2
             CollectionSample9 sample9 = new CollectionSample9();
             sample9.output();
         }
+
+        [TestMethod]
+        public void TestMethod10()
+        {
+            Generics gs = new ConsoleApp3.Util.Generics() 
+            sample9.output();
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.Util
 {
-    internal class Generics<T>
+    public class Generics<T>
     {
         private T content;
 

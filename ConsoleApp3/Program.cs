@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using ConsoleApp3.Entity;
 using ConsoleApp3.Service;
 using ConsoleApp3.Util;
-using Dog = ConsoleApp3.Util.Dog;
+using Dog = ConsoleApp3.Entity.Dog;
 
 namespace ConsoleApp3
 {
@@ -12,12 +12,12 @@ namespace ConsoleApp3
         static async Task Main(string[] args)
         {
 
-            Scraper scraper = new Scraper();
+            /*Scraper scraper = new Scraper();
             var words = await scraper.getWord();
-            //DBUtil dbutil = new DBUtil();
-            //dbutil.ConnectToDatabase();
-            //dbutil.Insert()
-
+            DBUtil dbutil = new DBUtil();
+            dbutil.ConnectToDatabase();
+            dbutil.Insert("Words2", ["Quote", "Author", "Tags"], words);
+            */
 
             //FileUtil fileUtil = new FileUtil();
             //fileUtil.fileGetContents();
@@ -139,7 +139,8 @@ namespace ConsoleApp3
             }*/
             //CollectionSample12 cs12 = new CollectionSample12();
             //cs12.output();
-
+            Factory<Dog> dogFactory = new Factory<Dog>(new Dog("ポチ"));
+            dogFactory.samplevoid();
         }
     }
 }
